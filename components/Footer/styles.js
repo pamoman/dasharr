@@ -3,18 +3,16 @@
  */
 
 const styles = {
-    container: {
+    container: (theme, backgroundColor) => ({
         position: 'fixed',
         bottom: 0,
         left: 0,
-        right: 0
-    },
-    bottomNav: (theme, backgroundColor) => ({
+        right: 0,
         padding: 2,
+        backgroundColor,
         [theme.breakpoints.down('sm')]: {
-            paddingBottom: 4,
+            paddingBottom: 6,
         },
-        backgroundColor
     })
 };
 

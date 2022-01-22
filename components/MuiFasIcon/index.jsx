@@ -4,26 +4,17 @@
 
 import { Icon } from '@mui/material';
 
-const MuiFasIcon = ({ children, sx = {}, color = "inherit", fontSize = "medium" }) => {
+const MuiFasIcon = ({ children, ...props }) => {
     const isFas = children.indexOf("fa-") !== -1;
 
     if (isFas) {
         return (
-            <Icon
-                sx={{
-                    boxSizing: 'content-box',
-                    ...sx
-                }}
-                baseClassName="fas"
-                className={children}
-                color={color}
-                fontSize={fontSize}
-            />
+            <Icon baseClassName="fas" className={children} {...props} />
         )
     }
 
     return (
-        <Icon sx={sx} color={color} fontSize={fontSize}>
+        <Icon {...props}>
             {children.split(/(?=[A-Z])/).join('_').toLowerCase()}
         </Icon>
     )

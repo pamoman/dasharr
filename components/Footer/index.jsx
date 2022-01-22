@@ -19,9 +19,8 @@ const Footer = () => {
 
     return (
         <footer>
-            <Box sx={styles.container}>
+            <Box sx={theme => styles.container(theme, backgroundColor)}>
                 <BottomNavigation
-                    sx={theme => styles.bottomNav(theme, backgroundColor)}
                     showLabels
                     value={filters.join()}
                     onChange={(_, newValue) => {
