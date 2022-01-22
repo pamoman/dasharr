@@ -11,6 +11,8 @@ import { dark, globalStyle } from '@themes';
 import { ConfigProvider, FilterProvider } from '@components/Contexts';
 import Layout from '@components/Layout';
 import yaml from 'js-yaml';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -19,6 +21,8 @@ const App = (props) => {
 
     const [ config, setConfig ] = useState({});
     const [ filters, setFilters ] = useState(["All"]);
+
+    library.add(fas);
 
     useEffect(() => {
         fetch("assets/config.yml")

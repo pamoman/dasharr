@@ -23,8 +23,8 @@ const Dashboard = ({ services, filters }) => {
                             <Grid sx={styles.serviceContainer} key={`dashboard-service-${i}`} container spacing={4}>
                                 <Grid item xs={12}>
                                     <Grid container direction="row" justifyContent="flex-start" alignItems="center">
-                                        <Grid item>
-                                            <MuiFasIcon sx={styles.serviceIcon} color="primary" fontSize="large">{icon}</MuiFasIcon>
+                                        <Grid sx={styles.serviceIcon} item>
+                                            <MuiFasIcon color="primary" size="2x">{icon}</MuiFasIcon>
                                         </Grid>
                                         <Grid item>
                                             <Typography variant="h4" component="h2" color="primary.main">

@@ -3,13 +3,14 @@
  */
 
 import { Icon } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MuiFasIcon = ({ children, ...props }) => {
     const isFas = children.indexOf("fa-") !== -1;
 
     if (isFas) {
         return (
-            <Icon baseClassName="fas" className={children} {...props} />
+            <FontAwesomeIcon {...props} icon={children.replace("fa-", "")} />
         )
     }
 
